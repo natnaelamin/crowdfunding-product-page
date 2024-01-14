@@ -3,7 +3,7 @@ import React from 'react'
 function Progress({backed, backers, progressPercentile}) {
   return (
     <div className='md:flex justify-center  mb-10 '>
-        <div className=' rounded-xl w-full bg-white px-20 py-10'>
+        <div className=' rounded-xl w-full bg-white md:px-20 px-5 py-10 text-center'>
             <div className='md:flex justify-between'>
                 <div className=' md:border-r py-2 border-b px-5 md:mb-0 mb-5'>
                     <h1 className='text-4xl font-bold'>${backed}</h1>

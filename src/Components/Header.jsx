@@ -31,13 +31,13 @@ function Header({toggleBookMark, bookMark, backProject}) {
              rounded-3xl bg-cyan-500 hover:bg-teal-600'>Back this project</button>
             <button onClick={handleBookMark} className='flex gap-5 bg-white rounded-3xl pr-2'>
               <span><img src="/images/icon-bookmark.svg" alt="" />
-              </span>{bookMark ? (<h1 className='pt-3 md:visible hidden text-teal-500'>Bookmarked</h1>) 
-              : (<h1 className='pt-3 md:visible hidden text-slate-500'>Bookmark</h1>)}</button>
-            <img className='absolute md:left-80 left-28 bottom-56 md:bottom-40 mb-2' src="/images/logo-mastercraft.svg" alt="" />
+              </span>{bookMark ? (<h1 className='pt-3 md:block hidden text-teal-500'>Bookmarked</h1>) 
+              : (<h1 className='pt-3 md:block hidden text-slate-500'>Bookmark</h1>)}</button>
+            <img className='absolute md:left-80 left-28 bottom-56 md:bottom-40 mb-2' 
+            src="/images/logo-mastercraft.svg" alt="" />
         </div> 
       </div>     
       </div>
-      
     </div>
   </>  
   )

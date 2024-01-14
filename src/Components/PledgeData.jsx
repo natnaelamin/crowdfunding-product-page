@@ -15,7 +15,7 @@ const Data = [
         title: 'Black Edition Stand',
         amount: 75,
         reward: "You get a Black Special Edition computer stand and a personal thank you. You'll be added to our Backer member list. Shipping is included.",
-        pledges: 64,
+        pledges: 4,
         id: 2
     },
     {

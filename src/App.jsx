@@ -41,9 +41,8 @@ function App() {
   
   const totalBacked = () =>{
     setBacked(Number(backed) + Number(pledge))
-    setBackers(Number(backers)  + 1)
-    setPledge('')
-    
+    setBackers(Number(backers)  + 1) 
+    setPledge('')  
   }
 
   const handleRadioChange = (value) => {
@@ -75,21 +74,22 @@ function App() {
     }
 
   };
-  console.log(showPledgeModal)
   
 
   return (
     <>
-    <Header toggleBookMark={toggleBookMark} bookMark={bookMark}
-    backProject={togglePledgeModal}/>
-    <div className='bg-slate-200 pt-60 md:pt-48 md:px-64 px-5 '>
-      <Progress backed={backed} backers={backers} 
-      progressPercentile={progressPercentile}/>
-      <div className=' flex md:justify-center justify-start'>
-        <div className='rounded-xl w-full bg-white md:px-20 px-5 py-10 mb-10'>
-          <About />
-           <PledgeOptions data={pledgeData} handleSelectReward={handleSelectReward} 
-           handleRadio={handleRadioChange}/>  
+    <div className={`${(showPledgeModal || showSuccessModal) && 'brightness-50'} `}>
+      <Header toggleBookMark={toggleBookMark} bookMark={bookMark}
+      backProject={togglePledgeModal}/>
+      <div className='bg-slate-200 pt-60 md:pt-48 md:px-64 px-5 '>
+        <Progress backed={backed} backers={backers} 
+        progressPercentile={progressPercentile}/>
+        <div className=' flex md:justify-center justify-start'>
+          <div className='rounded-xl w-full bg-white md:px-20 px-5 py-10 mb-10'>
+            <About />
+            <PledgeOptions data={pledgeData} handleSelectReward={handleSelectReward} 
+            handleRadio={handleRadioChange}/>  
+          </div>
         </div>
       </div>
     </div>
@@ -97,9 +97,10 @@ function App() {
       newValue={selectedRadio} handleRadio={handleRadioChange}
       handlePledge={handlePledge} inpVal={pledge} 
       data={pledgeData} toggleSuccessModal={toggleSuccessModal} />
-     <SuccessModal toggleSuccessModal={toggleSuccessModal} isSuccessOpen={showSuccessModal}
-     togglePledgeModal={togglePledgeModal} totalBacked={totalBacked} newValue={selectedRadio}
-     decreasePledges={decreasePledges} />
+    <SuccessModal toggleSuccessModal={toggleSuccessModal} isSuccessOpen={showSuccessModal}
+     totalBacked={totalBacked} newValue={selectedRadio}
+    decreasePledges={decreasePledges} setRadio={setSelectedRadio} />
+    
     </>
   )
 }
